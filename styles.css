@@ -1,0 +1,287 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+    background-color:var(--grey);
+}
+
+:root{
+    --blue:  #0656a1;
+    --scroller:rgb(218, 243, 77);
+    --black: #00173D;
+    --light_blue:#365ED9;
+    --grey:#eaeaf8;
+}
+
+*::-webkit-scrollbar{
+    height: .5rem;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: var(--scroller);
+}
+i{
+    font-size: 3rem;
+    color:  #055299;
+    text-shadow: 3px 2px 1px rgb(255, 255, 254);
+    margin-top: 8px;
+}
+
+.dentrio{
+    font-weight: 800;
+    font-size: 80px;
+    text-shadow: 2px 2px 1px rgb(252, 253, 251);
+    color: #055299;
+    margin-right: 50px;
+}
+
+.main{
+   background-image:url("./images/den.jpg");
+   background-position: center center;
+   background-repeat: no-repeat;
+    background-size:cover;
+    background-size: max(1200px,100vw);
+    height:100vh;
+    margin-bottom: 100px;
+}
+
+.box{
+    background-color:#031b3a;
+    height: 100vh;
+    width: 100%;
+    opacity:0.45;
+    position: absolute;
+    top:0;
+}
+
+.link-btn{
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--blue);
+    border-radius: 28px;
+    cursor: pointer;
+    padding: 25px 22px;
+    font-weight: 700;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+    color:#ffffff;
+}
+
+/* a:visited{
+    color: orange;
+} */
+
+.border{
+    border:1.5px solid transparent;
+    padding:15px 10px;
+}
+
+.border:hover{
+    border:2px solid #ffffff;
+}
+
+.link-btn:hover{
+    color:var(--blue);
+    background-color:rgb(115, 174, 241);
+}
+
+nav{
+    background-color:#031b3a;
+    opacity:0.92;
+    position: relative;
+    z-index: 10;
+    width:auto;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    position: sticky;
+    top:0px;
+}
+
+.about{
+    width:450px;
+    margin-left: 400px;
+}
+
+.about ul{
+    list-style: none;
+    display:flex;
+    color:#ffffff;
+    font-size:1.3rem;
+    font-weight: 600;
+    align-items: center;
+    justify-content:space-evenly;
+}
+.hero{
+    color:white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    gap:20px;
+}
+
+.hero :first-child{
+    font-size: 60px;
+    font-weight: 600;
+}
+.one::first-letter{
+    font-size:70px;
+    font-weight: 700;
+    color:rgb(239, 241, 75)
+}
+
+.hero :nth-child(2){
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 80px;
+}
+
+.hero :nth-child(3){
+    color:rgb(153, 252, 4);
+    font-size: 25px;
+    font-weight:600;
+}
+.hero :nth-child(4){
+    color:#ffffff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.box1{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.our_services{
+    color:var(--light_blue);
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 60px;
+}
+.provide{
+    color:var(--black) ;
+    font-weight: 950;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.box2{
+background-color:var(--grey);
+width: 100%;
+height: 1100px;
+padding: 40px;
+margin-bottom: 100px;
+}
+
+.service_list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.service_card{
+    width:400px;
+    height: 300px;
+    background-color:#ffffff;
+    border-radius: 20px;
+    padding:20px 0px 1px 0px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    margin:20px 0 0 20px;
+    box-shadow: 10px 8px 5px gray;
+}
+
+.card_title h2{
+    color:#0b277c;
+    font-weight: 900;
+    font-size:1.4rem;
+}
+
+.image img{
+    width:300px;
+}
+
+.contain{
+    width:1000px;
+    height: 500px;
+    display: flex;
+}
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+}
+.teethlogo img{
+    margin-right: 100px;
+}
+
+.about-content{
+    color:#787878 ;
+    font-size: 25px;
+    font-weight: 500;
+    padding:20px 10px 0 50px
+}
+
+.footer{
+    width:100%;
+    height: 400px;
+    background-color: #081730;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.footer{
+    color: #ffffff;
+    font-size: 20px;
+    padding:50px;
+}
+.links ul li{
+    color:#B1BFD8;
+    list-style:"+";
+    margin-bottom: 9px;
+}
+
+.contect i{
+    font-size:24px;
+    margin-right: 14px;
+    color:rgba(14, 83, 148, 0.945);
+}
+ .contect ul li{
+    list-style: none;
+    margin-bottom: 10px;
+ }
+ .other-contacts{
+    margin-top: 25px;
+ }
+
+ .other-contacts span{
+    margin-right: 20px;
+ }
+
+ .footer h2{
+    margin-bottom: 20px;
+    font-size: 35px;
+ }

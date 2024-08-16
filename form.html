@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Dentist Consultation</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form id="consultationForm">
+        <h1>Book Dentist Consultation</h1>
+        <p>Please fill out this form with the required information</p>
+        
+        <label for="name">Name
+            <input type="text" id="name" name="name" placeholder="Patient Name" required>
+        </label>
+
+        <label for="phone">Phone No.
+            <input type="number" id="phone" name="phone" placeholder="Mobile Number" required>
+        </label>
+
+        <label for="city">City
+            <input type="text" id="city" name="city" placeholder="Enter Your City Name" required>
+        </label>
+
+        <label for="age">Age
+            <select id="age" name="age" class="age" required>
+                <option value="">Select Your Age Group</option>
+                <option value="under 12">under 12</option>
+                <option value="12-25">12-25</option>
+                <option value="25-40">25-40</option>
+                <option value="40-60">40-60</option>
+                <option value="60+">60+</option>
+            </select>
+        </label>
+
+        <label for="email">Email
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </label>
+
+        <fieldset>
+            <legend>Which service do you want?</legend>
+            <label><input type="radio" name="service" value="Root Canal Treatment" required> Root Canal Treatment</label>
+            <label><input type="radio" name="service" value="Dental Decay"> Dental Decay</label>
+            <label><input type="radio" name="service" value="Dental Crown"> Dental Crown</label>
+            <label><input type="radio" name="service" value="Tooth Filling"> Tooth Filling</label>
+            <label><input type="radio" name="service" value="Tooth Aligners"> Tooth Aligners</label>
+            <label><input type="radio" name="service" value="Gum Disease Scaling"> Gum Disease Scaling</label>
+            <label><input type="radio" name="service" value="Full Mouth"> Full Mouth implant</label>
+        </fieldset>
+
+        <label for="date">Preferred Date
+            <input type="date" id="date" name="date" required>
+        </label>
+
+        <label for="time">Preferred Time
+            <input type="time" id="time" name="time" required>
+        </label>
+
+        <label for="concern">Your Concern
+            <textarea id="concern" name="concern" rows="4" placeholder="Please briefly describe your concern..." required></textarea>
+        </label>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Thank you for submitting the form!</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('consultationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+
+            const name = form.name.value.trim();
+            const phone = form.phone.value.trim();
+            const city = form.city.value.trim();
+            const age = form.age.value;
+            const email = form.email.value.trim();
+            const service = form.service.value;
+            const date = form.date.value;
+            const time = form.time.value;
+            const concern = form.concern.value.trim();
+
+            if (!name || !phone || !city || !age || !email || !service || !date || !time || !concern) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            if (!/^\d{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
+
+            const modal = document.getElementById('confirmationModal');
+            const span = document.getElementsByClassName('close')[0];
+
+            modal.style.display = 'block';
+
+            span.onclick = function() {
+                modal.style.display = 'none';
+                form.reset();
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    form.reset();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
